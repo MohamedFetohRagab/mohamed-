@@ -103,6 +103,19 @@ ul {
   border-radius: 0;
   z-index: -1;
 }
+.spikes {
+  position: relative;
+}
+.spikes::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  z-index: 1;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
 .head {
   position: relative;
 }
@@ -1414,7 +1427,6 @@ footer .box:first-child ul li {
   height: 50px;
   background-color: #313131;
   border-radius: 10px;
-  transition: var(--main-transition);
   overflow: hidden;
 }
 footer .box:first-child ul li:hover .insta {
@@ -1433,6 +1445,7 @@ footer .box:first-child ul li a {
   width: 100%;
   height: 100%;
   color: white;
+  transition: var(--main-transition);
 }
 footer .box:first-child ul li a i {
   font-size: 30px;
@@ -1473,6 +1486,12 @@ footer .box:nth-child(3) i {
   margin-right: 10px;
   font-size: 22px;
 }
+footer .box:nth-child(3) .info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
 footer .box:nth-child(4) {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -1489,4 +1508,9 @@ footer h3 {
   text-align: center;
   color: #ddd;
   border-top: 1px solid white;
+}
+footer h3 span {
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: normal;
 }
