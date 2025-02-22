@@ -274,11 +274,27 @@ ul {
 .landing .container .text {
   flex: 1;
 }
+.landing .container .text div {
+  width: fit-content;
+}
 .landing .container .text h2 {
   font-size: 40px;
   margin-bottom: 10px;
   text-transform: capitalize;
+  white-space: nowrap;
+  border-right: 1px solid black;
+  animation: typing 4s steps(100) 1 forwards;
+  overflow: hidden;
 }
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 .landing .container .text p {
   margin-top: 0;
   font-size: 22px;
@@ -295,6 +311,9 @@ ul {
 @media (max-width: 992px) {
   .landing .container .image img {
     display: none;
+  }
+  .landing .container .text div {
+    margin: auto;
   }
   .landing .container .text {
     text-align: center;
